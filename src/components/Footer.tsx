@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const main = document.getElementById('top-of-page');
+  if (main) {
+    main.focus();
+  }
+};
 
 const Footer = () => {
   return (
@@ -35,11 +44,11 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-semibold text-lg mb-4">For Jobseekers</h4>
               <ul className="space-y-3">
-                <li><a href="/jobs" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Find Jobs</a></li>
-                <li><a href="/register" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Register</a></li>
-                <li><a href="/career-advice" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Career Advice</a></li>
-                <li><a href="/training" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Training Programs</a></li>
-                <li><a href="/safety" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Safety Guidelines</a></li>
+                <li><Link to="/find-job" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Find Jobs</Link></li>
+                <li><Link to="/register" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Register</Link></li>
+                <li><Link to="/career-advice" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Career Advice</Link></li>
+                <li><Link to="/training-program" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Training Programs</Link></li>
+                <li><Link to="/safety-guidelines" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Safety Guidelines</Link></li>
               </ul>
             </div>
 
@@ -47,11 +56,11 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-semibold text-lg mb-4">For Employers</h4>
               <ul className="space-y-3">
-                <li><a href="/post-job" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Post a Job</a></li>
-                <li><a href="/pricing" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Pricing Plans</a></li>
-                <li><a href="/employer-portal" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Employer Portal</a></li>
-                <li><a href="/case-studies" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Case Studies</a></li>
-                <li><a href="/compliance" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Compliance Support</a></li>
+                <li><Link to="/post-job" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Post a Job</Link></li>
+                <li><Link to="/pricing" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Pricing Plans</Link></li>
+                <li><Link to="/employer-portal" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Employer Portal</Link></li>
+                <li><Link to="/case-studies" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Case Studies</Link></li>
+                <li><Link to="/compliance-support" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Compliance Support</Link></li>
               </ul>
             </div>
 
@@ -101,21 +110,21 @@ const Footer = () => {
             
             {/* Policy Links */}
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/policies/privacy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link to="/privacy-policy" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/policies/terms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              </Link>
+              <Link to="/terms-of-service" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Terms of Service
-              </a>
-              <a href="/policies/data-retention" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              </Link>
+              <Link to="/data-retention" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Data Retention
-              </a>
-              <a href="/policies/equality" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              </Link>
+              <Link to="/equal-opportunity" onClick={scrollToTop} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Equal Opportunity
-              </a>
-              <a href="/policies" className="text-primary-foreground hover:text-primary-foreground transition-colors font-medium">
+              </Link>
+              <Link to="/policies" onClick={scrollToTop} className="text-primary-foreground hover:text-primary-foreground transition-colors font-medium">
                 All Policies
-              </a>
+              </Link>
             </div>
           </div>
         </div>

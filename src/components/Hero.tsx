@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Search, MapPin, Clock, Users } from "lucide-react";
+import { Heart, Shield, Fish, Boxes, ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -7,150 +7,138 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import diverseHarvestTeam from "@/assets/diverse-harvest-team.jpg";
-import diverseEquipmentTeam from "@/assets/diverse-equipment-team.jpg";
-import diverseGreenhouseWorkers from "@/assets/diverse-greenhouse-workers.jpg";
-import diverseOrchardWorkers from "@/assets/diverse-orchard-workers.jpg";
-import diverseFarmMeeting from "@/assets/diverse-farm-meeting.jpg";
+import casualFarmWorkers from "@/assets/hero-casual-farm-workers.jpg";
+import nursingCareWorkers from "@/assets/hero-nursing-care-workers.jpg";
+import fishProcessing from "@/assets/hero-fish-processing.jpg";
+import warehouseFactory from "@/assets/hero-warehouse-factory.jpg";
 
 const Hero = () => {
-  const farmImages = [
+  const industrySlides = [
     {
-      src: diverseHarvestTeam,
-      alt: "Diverse team of farm workers from Africa, Asia, and Europe harvesting crops in UK fields",
-      caption: "Seasonal Harvest Workers"
+      src: casualFarmWorkers,
+      alt: "Professional casual farm workers and agricultural laborers working together in bright green fields",
+      title: "Recruiting with Care & Commitment",
+      subtitle: "Connecting skilled agricultural workers to UK farms nationwide",
+      ctaText: "Find Farm Work",
+      ctaLink: "/jobs",
+      icon: Shield
     },
     {
-      src: diverseEquipmentTeam,
-      alt: "Multi-ethnic agricultural team operating farm machinery and tractors in British countryside",
-      caption: "Equipment Operators"
+      src: nursingCareWorkers,
+      alt: "Professional nursing and care workers in bright modern healthcare facility",
+      title: "Compassionate Care Professionals",
+      subtitle: "Connecting skilled carers to families and facilities in need",
+      ctaText: "Find Care Work",
+      ctaLink: "/jobs",
+      icon: Heart
     },
     {
-      src: diverseGreenhouseWorkers,
-      alt: "Diverse greenhouse workers from various backgrounds tending crops in UK polytunnels",
-      caption: "Greenhouse Specialists"
+      src: fishProcessing,
+      alt: "Professional fish processing and fish farming workers in modern facility",
+      title: "Sustainable Seafood Careers",
+      subtitle: "Joining the future of responsible fish farming and processing",
+      ctaText: "Find Fishery Work",
+      ctaLink: "/jobs",
+      icon: Fish
     },
     {
-      src: diverseOrchardWorkers,
-      alt: "Multi-ethnic orchard workers picking fruit in UK apple and pear orchards",
-      caption: "Orchard Workers"
-    },
-    {
-      src: diverseFarmMeeting,
-      alt: "Diverse agricultural team meeting including African, Asian and European farm supervisors",
-      caption: "Farm Supervisors"
+      src: warehouseFactory,
+      alt: "Professional warehouse and factory workers in modern industrial facility",
+      title: "Industrial Excellence",
+      subtitle: "Building careers in modern manufacturing and logistics",
+      ctaText: "Find Factory Work",
+      ctaLink: "/jobs",
+      icon: Boxes
     }
   ];
 
   return (
-    <section className="bg-gradient-hero border-b border-border">
-      <div className="container mx-auto px-4 lg:px-6 py-12 lg:py-16">
-        {/* Optimized two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column - Content */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-secondary rounded-full"></span>
-              Agricultural Specialists Since 2016
-            </div>
-            
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground mb-6">
-              Agricultural Workers
-              <span className="block text-secondary mt-2">Seasonal. Reliable. Ready.</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Connecting experienced agricultural workers with UK farm employers across Britain.
-            </p>
-
-            {/* Perfectly aligned statistics */}
-            <div className="flex justify-center lg:justify-start gap-12 mb-10">
-              <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-secondary mb-2">200+</div>
-                <div className="text-sm text-muted-foreground">Workers Placed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-secondary mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">Partner Farms</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-secondary mb-2">£12+</div>
-                <div className="text-sm text-muted-foreground">Hourly Rate</div>
-              </div>
-            </div>
-
-            {/* Professional CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="default" size="lg" className="sm:min-w-[200px] bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary text-white font-semibold">
-                Apply for Farm Work
-              </Button>
-              <Button variant="outline" size="lg" className="sm:min-w-[200px] border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold">
-                Hire Farm Workers
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Column - Hero Image Carousel */}
-          <div className="relative">
-            <Carousel className="w-full" opts={{ align: "start", loop: true }}>
-              <CarouselContent>
-                {farmImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative overflow-hidden rounded-2xl shadow-hover">
-                       <img 
-                         src={image.src} 
-                         alt={image.alt}
-                         className="w-full h-[400px] lg:h-[480px] object-cover"
-                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-                      
-                      {/* Image Caption */}
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-card/90 backdrop-blur-sm border border-border text-foreground px-3 py-2 rounded-lg text-sm font-medium shadow-md">
-                          {image.caption}
+    <section className="relative overflow-hidden">
+      <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+        <CarouselContent>
+          {industrySlides.map((slide, index) => {
+            const IconComponent = slide.icon;
+            return (
+              <CarouselItem key={index}>
+                <div className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
+                  {/* Background Image */}
+                  <img 
+                    src={slide.src} 
+                    alt={slide.alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  
+                  {/* Dark Overlay for Text Readability */}
+                  <div className="absolute inset-0 bg-black/40"></div>
+                  
+                  {/* Content Overlay */}
+                  <div className="relative z-10 flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
+                    <div className="container mx-auto px-4 lg:px-6 text-center text-white">
+                      <div className="max-w-4xl mx-auto">
+                        {/* Industry Icon */}
+                        <div className="flex justify-center mb-6">
+                          <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
+                            <IconComponent className="w-12 h-12 text-white" />
+                          </div>
+                        </div>
+                        
+                        {/* Main Headline */}
+                        <h1 className="text-4xl lg:text-6xl xl:text-7xl font-heading font-bold mb-6 drop-shadow-lg">
+                          {slide.title}
+                        </h1>
+                        
+                        {/* Subtitle */}
+                        <p className="text-xl lg:text-2xl xl:text-3xl mb-8 opacity-90 drop-shadow-md">
+                          {slide.subtitle}
+                        </p>
+                        
+                        {/* Call-to-Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                          <Button 
+                            asChild
+                            size="lg" 
+                            className="btn-primary text-lg font-semibold py-4 px-8 shadow-lg hover:shadow-xl hover:scale-105 transform transition-all"
+                          >
+                            <a href={slide.ctaLink}>
+                              {slide.ctaText}
+                              <ArrowRight className="w-5 h-5 ml-2" />
+                            </a>
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="lg"
+                            className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-foreground backdrop-blur-sm text-lg font-semibold py-4 px-8"
+                          >
+                            Hire Talent
+                          </Button>
+                        </div>
+                        
+                        {/* Statistics */}
+                        <div className="mt-12 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+                          <div className="text-center">
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 drop-shadow-md">500+</div>
+                            <div className="text-sm opacity-90">Workers Placed</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 drop-shadow-md">100+</div>
+                            <div className="text-sm opacity-90">Partner Companies</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-3xl lg:text-4xl font-bold mb-2 drop-shadow-md">£13+</div>
+                            <div className="text-sm opacity-90">Average Hourly</div>
+                          </div>
                         </div>
                       </div>
-                      
-                      {/* Floating badges */}
-                      {index === 0 && (
-                        <div className="absolute top-4 right-4">
-                          <div className="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
-                            <Clock className="w-4 h-4" />
-                            Weekly Pay
-                          </div>
-                        </div>
-                      )}
-                      {index === 1 && (
-                        <div className="absolute top-4 right-4">
-                          <div className="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
-                            <Users className="w-4 h-4" />
-                            No Experience? We'll train you
-                          </div>
-                        </div>
-                      )}
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
-            </Carousel>
-            
-            {/* Floating trust badges */}
-            <div className="absolute -bottom-6 left-6 right-6">
-              <div className="bg-card/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-card">
-                <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-                  <span className="font-medium">Trusted by:</span>
-                  <span>Yorkshire Farms</span>
-                  <span>British AgriCorp</span>
-                  <span>UK Harvest</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
+        <CarouselPrevious className="left-4 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+        <CarouselNext className="right-4 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30" />
+      </Carousel>
     </section>
   );
 };

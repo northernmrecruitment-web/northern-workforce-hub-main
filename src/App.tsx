@@ -12,6 +12,20 @@ import Employers from "./pages/Employers";
 import AboutPage from "./pages/AboutPage";
 import Policies from "./pages/Policies";
 import NotFound from "./pages/NotFound";
+import FindJob from "./pages/FindJob";
+import Register from "./pages/Register";
+import CareerAdvice from "./pages/CareerAdvice";
+import TrainingProgram from "./pages/TrainingProgram";
+import SafetyGuidelines from "./pages/SafetyGuidelines";
+import PostJob from "./pages/PostJob";
+import Pricing from "./pages/Pricing";
+import EmployerPortal from "./pages/EmployerPortal";
+import CaseStudies from "./pages/CaseStudies";
+import ComplianceSupport from "./pages/ComplianceSupport";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import DataRetention from "./pages/DataRetention";
+import EqualOpportunity from "./pages/EqualOpportunity";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +44,27 @@ const App = () => (
           <Route path="/employers" element={<Employers />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/policies" element={<Policies />} />
+          
+          {/* Jobseeker Pages */}
+          <Route path="/find-job" element={<FindJob />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/career-advice" element={<CareerAdvice />} />
+          <Route path="/training-program" element={<TrainingProgram />} />
+          <Route path="/safety-guidelines" element={<SafetyGuidelines />} />
+          
+          {/* Employer Pages */}
+          <Route path="/post-job" element={<PostJob />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/employer-portal" element={<EmployerPortal />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/compliance-support" element={<ComplianceSupport />} />
+          
+          {/* Policy Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/data-retention" element={<DataRetention />} />
+          <Route path="/equal-opportunity" element={<EqualOpportunity />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
